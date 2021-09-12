@@ -9,7 +9,7 @@
 #include <stdlib.h>
 const size_t increment = 2;
 
-void vInit(T *vector){//TODO: make initial size larger...16?
+void vInit(Vector *vector){//TODO: make initial size larger...16?
     size_t init_size = 4;//initialize array to size 4...
     vector->vptr = malloc(init_size * sizeof(void *));//initialize to array of void pointers
     if(vector->vptr){
@@ -22,7 +22,7 @@ void vInit(T *vector){//TODO: make initial size larger...16?
     vector->space_left = init_size;//space left is initial size (4)
 }
 
-void vPush( void *data, T *vector){
+void vPush( void *data, Vector *vector){
     void *vptrTemp;
     size_t maxLength;
 
@@ -43,17 +43,17 @@ void vPush( void *data, T *vector){
 }
 
 //This will make the memory efficient.
-void vFinalizeMemory(T *vector){
+void vFinalizeMemory(Vector *vector){
     vector->vptr = realloc(vector->vptr, vector->size * sizeof(void *));
 }
 
 //free memory back to heap
-void vFree(T *vector){
+void vFree(Vector *vector){
     free(vector->vptr);
 }
 
 //return amount of elements in array
-int vSize(T *vector){
+int vSize(Vector *vector){
     return (int)vector->size;
 }
 

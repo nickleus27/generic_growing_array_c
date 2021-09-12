@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include "gen_vect.h"
 int main(void){
-    T t;
+    Vector t;
     vInit(&t);
     int i;
     char c;

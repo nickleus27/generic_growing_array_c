@@ -15,17 +15,17 @@ typedef struct
     size_t space_left;
     size_t size;
     void **vptr;
-}T;
+}Vector;
 
-void vInit(T *);
+void vInit(Vector *);
 
-void vPush( void *, T *);
+void vPush( void *, Vector *);
 
-void vFinalizeMemory(T *);
+void vFinalizeMemory(Vector *);
 
-void vFree(T *);
+void vFree(Vector *);
 
-int vSize(T *);
+int vSize(Vector *);
 
 //void * atIndex(int, T *, void *); experimenting here
 
