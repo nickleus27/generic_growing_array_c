@@ -57,10 +57,10 @@ int vSize(Vector *vector){
     return (int)vector->size;
 }
 
-/* experimenting here on how to return value
-void * atIndex(int index, T *vector, void * ptr){
-    void * vptr;
-    vptr = ptr;
-    return (vptr *)vector[index];
+/* experimenting here on how to return value*/
+void * vGet(int index, Vector *vector){
+    void ** tempptr;
+    tempptr = vector->vptr;
+    return tempptr[index];
 }
- */
+ 

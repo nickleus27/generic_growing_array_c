@@ -27,6 +27,6 @@ void vFree(Vector *);
 
 int vSize(Vector *);
 
-//void * atIndex(int, T *, void *); experimenting here
+void * vGet(int, Vector *); //experimenting here
 
 #endif /* gen_vect_h */

@@ -34,16 +34,15 @@ int main(void){
     vPush( &c, &t );
     vPush( cp, &t );
     vPush( &d, &t );
-    
 
     vFinalizeMemory(&t);
-    printf( "%d\n", *((int *)t.vptr[0]) );
-    printf( "%c\n", *((char *)t.vptr[1] ));
-    printf( "%s\n", (char *)t.vptr[2] );
-    printf( "%f\n", *((float*)t.vptr[3] ));
-    printf( "%c\n", *((char *)t.vptr[4] ));
-    printf( "%s\n", (char *)t.vptr[5] );
-    printf( "%f\n", *((float*)t.vptr[6] ));
+    printf( "%d\n", *((int *)vGet(0, &t)) );
+    printf( "%c\n", *((char *)vGet(1, &t)) );
+    printf( "%s\n", (char *)vGet(2, &t) );
+    printf( "%f\n", *((float*)vGet(3, &t)) );
+    printf( "%c\n", *((char *)vGet(4, &t)) );
+    printf( "%s\n", (char *)vGet(5, &t) );
+    printf( "%f\n", *((float*)vGet(6, &t)) );
     vFree(&t);
 
     printf("the size of t is %d\n", vSize(&t));

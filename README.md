@@ -14,7 +14,7 @@ To push back value:
 vPush(&data, &v); //value is whatever data type
 
 To access data:
-*((int *)v.vptr[0]) //access an integer value stored at index 0
+*((int *)vGet(0, &t)) //access an integer value stored at index 0
 
 Return size of array:
 vSize(&v);
