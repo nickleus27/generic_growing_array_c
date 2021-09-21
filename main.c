@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "gen_vect.h"
+
 int main(void){
     Vector t;
     vInit(&t);

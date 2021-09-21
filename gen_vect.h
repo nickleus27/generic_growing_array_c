@@ -7,6 +7,7 @@
 
 #ifndef gen_vect_h
 #define gen_vect_h
+#define INCREMENT 1
 
 #include <stdio.h>
 //const size_t increment;

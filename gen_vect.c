@@ -7,7 +7,6 @@
 
 #include "gen_vect.h"
 #include <stdlib.h>
-const size_t increment = 2;
 
 void vInit(Vector *vector){//TODO: make initial size larger...16?
     size_t init_size = 4;//initialize array to size 4...
@@ -16,7 +15,7 @@ void vInit(Vector *vector){//TODO: make initial size larger...16?
         printf("initialized successfully\n");
     }else{
         printf("Failed malloc\n");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
     vector->size = 0;//array is empty
     vector->space_left = init_size;//space left is initial size (4)
@@ -27,11 +26,11 @@ void vPush( void *data, Vector *vector){
     size_t maxLength;
 
     if( vector->space_left == 0 ){//if array is full
-        maxLength = vector->size<<1;//double the size of array (maxLength x 2)
+        maxLength = vector->size<<INCREMENT;//1;//double the size of array (maxLength x 2)
         vptrTemp = realloc(vector->vptr, maxLength * sizeof(void *) );//have vptrTemp = realloc incase not succesful
         if( vptrTemp == NULL ){//exit it realloc failed
             printf( "Failed realloc");
-            exit(1);
+            exit(EXIT_FAILURE);
         }
         vector->space_left = maxLength - vector->size;//space left after growing
         printf("this is new space left after growing %zu\n", vector->space_left);
